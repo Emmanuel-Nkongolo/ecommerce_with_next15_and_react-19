@@ -1,6 +1,6 @@
 "use server";
 
-import { signnInFormSchema } from "../validators";
+import { signInFormSchema } from "../validators";
 import { signIn, signOut } from "@/auth";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
 
@@ -10,7 +10,7 @@ export async function signInWithCredentials(
   formData: FormData
 ) {
   try {
-    const user = signnInFormSchema.parse({
+    const user = signInFormSchema.parse({
       email: formData.get("email"),
       password: formData.get("password"),
     });
