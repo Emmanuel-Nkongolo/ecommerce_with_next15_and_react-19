@@ -94,8 +94,5 @@ const SignUpForm = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default SignUpForm;
-=======
-export default SignUpForm;
->>>>>>> b9b9bba (create sign-up and fix searchParams declaration plus the validators for the sign-up, action and the errors)

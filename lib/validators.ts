@@ -37,8 +37,5 @@ export const signUpFormSchema = z.object({
 }).refine((data) => data.password === data.confirmPassword, {
   message: "Passwords don't match",
   path: ['confirmPassword'],
-<<<<<<< HEAD
+
 });
-=======
-});
->>>>>>> b9b9bba (create sign-up and fix searchParams declaration plus the validators for the sign-up, action and the errors)

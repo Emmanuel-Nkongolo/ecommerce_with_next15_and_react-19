@@ -18,8 +18,4 @@ export const signUpDefultValues = {
   email: "",
   password: "",
   confirmPassword: ''
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> b9b9bba (create sign-up and fix searchParams declaration plus the validators for the sign-up, action and the errors)
