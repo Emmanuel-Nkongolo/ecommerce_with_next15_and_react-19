@@ -3,7 +3,11 @@
 import { Button } from "@/components/ui/button";
 import ModeToggle from "./mode-toggle";
 import Link from "next/link";
+<<<<<<< HEAD
 import { EllipsisVertical, ShoppingCart } from "lucide-react";
+=======
+import { EllipsisVertical, ShoppingCart} from "lucide-react";
+>>>>>>> b9b9bba (create sign-up and fix searchParams declaration plus the validators for the sign-up, action and the errors)
 import {
   Sheet,
   SheetContent,

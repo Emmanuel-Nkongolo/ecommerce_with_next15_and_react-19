@@ -20,18 +20,17 @@ export const metadata: Metadata = {
   title: "Sign Up",
 };
 
-const SignUpPage = async (props: {
-  searchParams: Promise<{
-    callbackUrl: string;
-  }>;
+const SignUpPage = async ({
+  searchParams,
+}: {
+  searchParams?: { callbackUrl?: string };
 }) => {
-  const { callbackUrl } = await props.searchParams;
-
   const session = await auth();
 
   if (session) {
-    return redirect(callbackUrl || "/");
+    return redirect(searchParams?.callbackUrl || "/");
   }
+
   return (
     <div className="w-full max-w-md mx-auto">
       <Card>
@@ -51,11 +50,12 @@ const SignUpPage = async (props: {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <SignUpForm /> 
+          <SignUpForm />
         </CardContent>
       </Card>
     </div>
   );
 };
+
 
 export default SignUpPage;
