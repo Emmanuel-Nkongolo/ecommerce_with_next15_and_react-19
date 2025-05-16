@@ -1,5 +1,4 @@
 //
-//
 
 import {
   Card,
@@ -20,19 +19,18 @@ export const metadata: Metadata = {
   title: "Sign Up",
 };
 
-type Props = {
-  searchParams?: {
-    callbackUrl?: string;
-  };
-};
+const SignUpPage = async (props: {
+  searchParams: Promise<{
+    callbackUrl: string;
+  }>;
+}) => {
+  const { callbackUrl } = await props.searchParams;
 
-const SignUpPage = async ({ searchParams }: Props) => {
   const session = await auth();
 
   if (session) {
-    return redirect(searchParams?.callbackUrl || "/");
+    return redirect(callbackUrl || "/");
   }
-
   return (
     <div className="w-full max-w-md mx-auto">
       <Card>
@@ -43,7 +41,7 @@ const SignUpPage = async ({ searchParams }: Props) => {
               width={100}
               height={100}
               alt={`${APP_NAME} logo`}
-              priority
+              priority={true}
             />
           </Link>
           <CardTitle className="text-center">Create Account</CardTitle>
@@ -52,7 +50,7 @@ const SignUpPage = async ({ searchParams }: Props) => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <SignUpForm />
+          <SignUpForm /> 
         </CardContent>
       </Card>
     </div>
