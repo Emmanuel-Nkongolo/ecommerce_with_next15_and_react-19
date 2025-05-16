@@ -20,11 +20,13 @@ export const metadata: Metadata = {
   title: "Sign Up",
 };
 
-const SignUpPage = async ({
-  searchParams,
-}: {
-  searchParams?: { callbackUrl?: string };
-}) => {
+type Props = {
+  searchParams?: {
+    callbackUrl?: string;
+  };
+};
+
+const SignUpPage = async ({ searchParams }: Props) => {
   const session = await auth();
 
   if (session) {
@@ -41,7 +43,7 @@ const SignUpPage = async ({
               width={100}
               height={100}
               alt={`${APP_NAME} logo`}
-              priority={true}
+              priority
             />
           </Link>
           <CardTitle className="text-center">Create Account</CardTitle>
@@ -56,6 +58,5 @@ const SignUpPage = async ({
     </div>
   );
 };
-
 
 export default SignUpPage;
