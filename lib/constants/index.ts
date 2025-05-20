@@ -14,8 +14,8 @@ export const signInDefultValues = {
 };
 
 export const signUpDefultValues = {
-  name: '',
+  name: "",
   email: "",
   password: "",
-  confirmPassword: ''
+  confirmPassword: "",
 };
