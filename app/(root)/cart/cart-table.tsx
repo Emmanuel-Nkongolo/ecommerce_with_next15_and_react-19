@@ -73,7 +73,6 @@ function RemoveButton({ item }: { item: CartItem }) {
 
 const CartTable = ({ cart }: { cart?: Cart }) => {
   const router = useRouter();
-  const [isPending, startTransition] = useTransition();
 
   return (
     <>
@@ -86,9 +85,13 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
         <div className="grid md:grid-cols-4 md:gap-5">
           <div className="overflow-x-auto md:col-span-3">
             <Table>
-              <TableHead>Item</TableHead>
-              <TableHead className="text-center">Quantity</TableHead>
-              <TableHead className="text-right">Price</TableHead>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Item</TableHead>
+                  <TableHead className="text-center">Quantity</TableHead>
+                  <TableHead className="text-right">Price</TableHead>
+                </TableRow>
+              </TableHeader>
               <TableBody>
                 {cart.items.map((item) => (
                   <TableRow key={item.slug}>
@@ -111,7 +114,7 @@ const CartTable = ({ cart }: { cart?: Cart }) => {
                       <span>{item.qty}</span>
                       <AddButton item={item} />
                     </TableCell>
-                    <TableCell className="text-right">$ {item.price}</TableCell>
+                    <TableCell className="text-right">${item.price}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
