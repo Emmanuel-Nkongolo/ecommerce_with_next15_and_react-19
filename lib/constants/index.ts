@@ -19,3 +19,12 @@ export const signUpDefultValues = {
   password: "",
   confirmPassword: "",
 };
+
+export const shippingAddressDefaultValues = {
+  fullName: "John Doe",
+  phoneNumber: "+243812101023",
+  streetAddress: "123 mongafula",
+  city: "Mongafula",
+  postalCode: "12345",
+  country: "DRC",
+};
