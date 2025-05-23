@@ -59,7 +59,8 @@ export async function signOutUser() {
       path: "/",
     });
   } catch (error) {
-    return { success: false, message: formatError(error) };
+    console.error("Cart cleanup failed during logout:", formatError(error));
+    // Continue with logout even if cleanup fails
   }
   await signOut();
 }
