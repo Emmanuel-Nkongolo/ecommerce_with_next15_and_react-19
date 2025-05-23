@@ -11,6 +11,7 @@ import { hashSync } from "bcrypt-ts-edge";
 import { prisma } from "@/db/prisma";
 import { formatError } from "../utils";
 import { ShippingAddress } from "@/types";
+import { cookies } from "next/headers";
 
 // Sign in the user with credentials
 export async function signInWithCredentials(
@@ -37,6 +38,29 @@ export async function signInWithCredentials(
 
 // Sign user out
 export async function signOutUser() {
+  try {
+    // Get the session cart cookie
+    const cookiesObject = await cookies();
+    const sessionCartId = cookiesObject.get("sessionCartId")?.value;
+
+    // Clean up orphaned session cart from database
+    if (sessionCartId) {
+      await prisma.cart.deleteMany({
+        where: {
+          sessionCartId,
+          userId: null, // Only delete orphaned carts
+        },
+      });
+    }
+
+    // Clear the session cart cookie
+    cookiesObject.set("sessionCartId", "", {
+      expires: new Date(0),
+      path: "/",
+    });
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
   await signOut();
 }
 

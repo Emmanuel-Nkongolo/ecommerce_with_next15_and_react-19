@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+
 export const metadata: Metadata = {
   title: "Sign Up",
 };
