@@ -21,10 +21,10 @@ export const signUpDefultValues = {
 };
 
 export const shippingAddressDefaultValues = {
-  fullName: "John Doe",
-  phoneNumber: "+243812101023",
-  streetAddress: "123 mongafula",
-  city: "Mongafula",
-  postalCode: "12345",
-  country: "DRC",
+  fullName: "",
+  phoneNumber: "",
+  streetAddress: "",
+  city: "",
+  postalCode: "",
+  country: "",
 };
