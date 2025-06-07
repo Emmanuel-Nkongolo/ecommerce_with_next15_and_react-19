@@ -28,7 +28,7 @@ const Charts = ({
         />
         <Bar
           dataKey="totalSales"
-          fill="#eab308"
+          fill="#eab308" //Might change this later not too sure about the color yet
           radius={[4, 4, 0, 0]}
           //   className="fill-blue-300"
         />
