@@ -17,7 +17,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Admin Dashboard",
 };
-//
+import Charts from "./charts";
 //
 
 const AdminOverviewPage = async () => {
@@ -88,7 +88,9 @@ const AdminOverviewPage = async () => {
           <CardHeader>
             <CardTitle>Overview</CardTitle>
           </CardHeader>
-          <CardContent>{/* Chart here */}</CardContent>
+          <CardContent>
+            <Charts data={{ salesData: summary.salesData }} />
+          </CardContent>
         </Card>
 
         <Card className="col-span-3">
