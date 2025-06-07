@@ -421,6 +421,13 @@ export async function deliverOrder(orderId: string) {
         deliveredAt: new Date(),
       },
     });
+
+    revalidatePath(`/order/${orderId}`);
+
+    return {
+      success: true,
+      message: "Order has been marked delivered",
+    };
   } catch (error) {
     return {
       success: false,
