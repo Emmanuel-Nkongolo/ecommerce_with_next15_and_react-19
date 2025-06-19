@@ -34,10 +34,6 @@ const ProductForm = ({
 }) => {
   const router = useRouter();
 
-  type FormSchema = typeof type extends "Create"
-    ? z.infer<typeof insertProductSchema>
-    : z.infer<typeof updateProductSchema>;
-
   const form = useForm<z.infer<typeof insertProductSchema>>({
     resolver: zodResolver(
       type === "Create" ? insertProductSchema : updateProductSchema
