@@ -14,6 +14,7 @@ const AdminProductUpdastePage = async (props: {
   }>;
 }) => {
   await requireAdmin();
+
   const { id } = await props.params;
 
   const product = await getProductById(id);
