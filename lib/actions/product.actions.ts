@@ -39,13 +39,18 @@ export async function getAllProducts({
   query,
   limit = PAGE_SIZE,
   page,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   category,
+  price,
+  rating,
+  sort,
 }: {
   query: string;
   limit?: number;
   page: number;
   category?: string;
+  price?: string;
+  sort?: string;
+  rating?: string;
 }) {
   // Query filter
   const queryFilter: Prisma.ProductWhereInput =
