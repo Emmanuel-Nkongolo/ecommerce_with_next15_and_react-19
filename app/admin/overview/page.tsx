@@ -22,6 +22,7 @@ export const metadata: Metadata = {
 
 const AdminOverviewPage = async () => {
   await requireAdmin();
+
   const session = await auth();
 
   if (session?.user?.role !== "admin") {

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 };
 const CreateProductPage = async () => {
   await requireAdmin();
+
   return (
     <>
       <h2 className="h2-bold">Create Product</h2>

@@ -2,8 +2,6 @@
 
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from "recharts";
 
-//
-
 const Charts = ({
   data: { salesData },
 }: {

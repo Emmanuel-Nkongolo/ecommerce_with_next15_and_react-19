@@ -25,6 +25,7 @@ const AdminOrdersPage = async (props: {
   searchParams: Promise<{ page: string; query: string }>;
 }) => {
   await requireAdmin();
+
   const { page = "1", query: searchText } = await props.searchParams;
 
   const session = await auth();
