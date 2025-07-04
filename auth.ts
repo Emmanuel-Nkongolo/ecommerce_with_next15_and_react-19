@@ -55,6 +55,7 @@ export const config = {
     }),
   ],
   callbacks: {
+    ...authConfig.callbacks,
     async session({ session, user, trigger, token }: any) {
       // Set the user ID from the token
       session.user.id = token.sub;
@@ -116,7 +117,6 @@ export const config = {
 
       return token;
     },
-    ...authConfig.callbacks,
   },
 };
 

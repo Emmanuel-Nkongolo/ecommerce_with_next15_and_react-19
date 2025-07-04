@@ -1,6 +1,6 @@
-// export const metadata = {
-//   title: "Home",
-// };
+export const metadata = {
+  title: "Home",
+};
 import ProductList from "@/components/shared/product/product-list";
 import {
   getLatestProducts,
