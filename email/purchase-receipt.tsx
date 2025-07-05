@@ -16,6 +16,8 @@ import {
 import { Order } from "@/types";
 import { formatCurrency } from "@/lib/utils";
 import sampleData from "@/db/sample-data";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Mock data to populate and preview the email template
 PurchaseReceiptEmail.PreviewProps = {
