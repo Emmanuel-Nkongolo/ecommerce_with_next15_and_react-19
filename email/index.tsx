@@ -14,13 +14,4 @@ export const sendPurchaseReceipt = async ({ order }: { order: Order }) => {
     subject: `Order Confirmation ${order.id}`,
     react: <PurchaseReceiptEmail order={order} />,
   });
-
-  // if (error) {
-  //   console.log("Resend error: ", error);
-  //   throw new Error(`Failed to send email: ${error.message}`);
-  // }
-
-  // console.log("Email sent successfully: ", data);
-
-  // return data;
 };
