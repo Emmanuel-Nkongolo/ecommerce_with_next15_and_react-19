@@ -20,14 +20,14 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## Features
+The e-commerce app has 3 main payment methods which include Stripe, Paypal, and COD (Cash On Delivery)
+You have access to the auth like you would in all e-commerces... with the ability to view products without
+being logged-in and if you select a product and then log in the product you selected will be then added to your email
+you can review a product.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you run this locally or clone the repo you can then create your supper user which can have access to an admin dashboard, basically the manager controlling
+Everything like COD when it was delivered and so on... 
 
 ## Deploy on Vercel
 
